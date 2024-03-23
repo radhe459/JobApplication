@@ -2,6 +2,8 @@ package com.radhe.jobAplication.company;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.radhe.jobAplication.job.Job;
+import com.radhe.jobAplication.review.Review;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -18,6 +20,9 @@ public class Company {
     @JsonIgnore
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
+    @JsonIgnore
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
 
     public List<Job> getJobs() {
         return jobs;
@@ -30,6 +35,7 @@ public class Company {
     public Company() {
     }
 
+    @Nullable
     public Long getId() {
         return id;
     }

@@ -4,13 +4,13 @@ import java.util.List;
 
 public interface ReviewService {
 
-    List<Review> getAllReviews();
+    List<Review> getAllReviews(Long companyId);
 
     Review getReviewById(Long reviewId);
 
-    boolean createReview(Long companyId);
+    boolean createReview(Long companyId,Review review);
 
-    boolean updateReview(Long companyId, Long reviewId);
+    boolean updateReview(Long companyId, Review review);
 
-    boolean deleteReview(Long companyId,Long reviewId);
+    boolean deleteReview(Long reviewId);
 }
